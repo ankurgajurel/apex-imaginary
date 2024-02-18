@@ -1,0 +1,10 @@
+query {
+  faqs {
+    data {
+      attributes {
+        question
+        answer
+      }
+    }
+  }
+}

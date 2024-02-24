@@ -10,7 +10,7 @@ export default function ContactPage() {
             Contact us
           </h1>
           <p className="mt-1 text-gray-600 dark:text-gray-400">
-            We'd love to talk about how we can help you.
+            We&apos;d love to talk about how we can help you.
           </p>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default function ContactPage() {
               Knowledgebase
             </h3>
             <p className="mt-1 text-gray-500">
-              We're here to help with any questions or code.
+              We&apos;re here to help with any questions or code.
             </p>
             <p className="mt-5 inline-flex items-center gap-x-1 font-medium text-blue-600 dark:text-blue-500">
               Contact support

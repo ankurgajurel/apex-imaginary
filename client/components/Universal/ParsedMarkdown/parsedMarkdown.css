@@ -1,0 +1,31 @@
+.parsedMarkdown h1 {
+  @apply text-2xl font-bold;
+}
+
+.parsedMarkdown h2 {
+  @apply text-xl font-semibold;
+}
+
+.parsedMarkdown h3 {
+  @apply text-lg font-medium;
+}
+
+.parsedMarkdown pre {
+  color: #e2e8f0;
+  background-color: #1e293b;
+  overflow-x: auto;
+  font-weight: 400;
+  font-size: 0.875em;
+  line-height: 1.7142857;
+  margin-top: 1.7142857em;
+  margin-bottom: 1.7142857em;
+  border-radius: 0.375rem;
+  padding-top: 0.8571429em;
+  padding-right: 1.1428571em;
+  padding-bottom: 0.8571429em;
+  padding-left: 1.1428571em;
+}
+
+.parsedMarkdown ul {
+  list-style-type: inherit;
+}

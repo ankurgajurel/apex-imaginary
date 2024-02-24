@@ -9,6 +9,7 @@ export default function Services() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6">
         {data?.services?.data.map((service: any, index: number) => (
           <Link
+            key={index}
             className="group flex gap-y-6 size-full hover:bg-gray-100 rounded-lg p-5 transition-all dark:hover:bg-white/[.075] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
             href={service.attributes.href}
           >

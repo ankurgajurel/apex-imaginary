@@ -798,9 +798,10 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     title: Attribute.String;
     author_email: Attribute.Email;
     cover: Attribute.Media;
-    content: Attribute.Blocks;
     slug: Attribute.String;
     headline: Attribute.String;
+    content: Attribute.RichText;
+    tags: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -867,6 +868,34 @@ export interface ApiServiceService extends Schema.CollectionType {
   };
 }
 
+export interface ApiTeamTeam extends Schema.CollectionType {
+  collectionName: 'teams';
+  info: {
+    singularName: 'team';
+    pluralName: 'teams';
+    displayName: 'Team';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    designation: Attribute.String;
+    headline: Attribute.String;
+    github: Attribute.String;
+    linkedin: Attribute.String;
+    profileGithub: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::team.team', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::team.team', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -888,6 +917,7 @@ declare module '@strapi/types' {
       'api::blog.blog': ApiBlogBlog;
       'api::faq.faq': ApiFaqFaq;
       'api::service.service': ApiServiceService;
+      'api::team.team': ApiTeamTeam;
     }
   }
 }

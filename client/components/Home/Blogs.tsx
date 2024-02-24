@@ -17,8 +17,9 @@ export default function Blogs() {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data?.blogs?.data.map((blog: any, index: number) => (
+        {data?.blogs?.data.slice(0, 2)?.map((blog: any, index: number) => (
           <Link
+            key={index}
             className="group dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
             href={`/${blog.attributes.slug}`}
           >
@@ -27,7 +28,7 @@ export default function Blogs() {
                 className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
                 src={
                   process.env.NEXT_PUBLIC_ASSET_URL +
-                  blog.attributes.cover.data.attributes.url
+                  blog?.attributes?.cover?.data.attributes.url
                 }
                 alt="Image Description"
               />

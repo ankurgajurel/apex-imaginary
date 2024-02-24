@@ -1,0 +1,15 @@
+FROM --platform=linux/amd64 node:18-alpine
+WORKDIR /app
+
+ENV NODE_ENV=production
+
+RUN corepack enable
+RUN corepack prepare pnpm@7.18.0 --activate
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --production
+COPY . .
+RUN pnpm build
+EXPOSE 1337
+
+CMD ["pnpm", "start"]

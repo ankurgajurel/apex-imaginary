@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.prod
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+    env_file: ./client/.env.local
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.prod
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./client:/app
+    env_file: ./server/.env

@@ -24,7 +24,7 @@ dependencies:
     specifier: ^4.20.1
     version: 4.20.1
   better-sqlite3:
-    specifier: 8.6.0
+    specifier: ^8.6.0
     version: 8.6.0
   path:
     specifier: ^0.12.7
